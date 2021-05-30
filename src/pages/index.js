@@ -1,54 +1,146 @@
 import tw, { styled } from "twin.macro";
+import {
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
+  useDisclosure,
+  Button,
+} from "@chakra-ui/react";
 
-const StyledInput = styled.input`
-  color: black;
-  ${tw`border`}
-  ${({ hasBorder }) => hasBorder && tw`border-purple-500`}
-`;
-const Input = () => <StyledInput hasBorder />;
 export default function Home() {
+  const { isOpen, onOpen, onClose } = useDisclosure();
   return (
-    <div>
-      <Input />
-      <button className="btn">hola</button>
-      <div tw="max-w-2xl px-8 py-4 mx-auto bg-white rounded-lg shadow-md dark:bg-gray-800">
-        <div tw="flex items-center justify-between">
-          <span tw="text-sm font-light text-gray-600 dark:text-gray-400">
-            Mar 10, 2019
-          </span>
-          <a tw="px-3 py-1 text-sm font-bold text-gray-100 transition-colors duration-200 transform bg-gray-600 rounded cursor-pointer hover:bg-gray-500">
-            Design
-          </a>
-        </div>
-        <div tw="mt-2">
-          <a
-            href="#"
-            tw="text-2xl font-bold text-gray-700 dark:text-white hover:text-gray-600 dark:hover:text-gray-200 hover:underline">
-            Accessibility tools for designers and developers
-          </a>
-          <p tw="mt-2 text-gray-600 dark:text-gray-300">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora
-            expedita dicta totam aspernatur doloremque. Excepturi iste iusto eos
-            enim reprehenderit nisi, accusamus delectus nihil quis facere in
-            modi ratione libero!
-          </p>
-        </div>
-        <div tw="flex items-center justify-between mt-4">
-          <a href="#" tw="text-blue-600 dark:text-blue-400 hover:underline">
-            Read more
-          </a>
-          <div tw="flex items-center">
-            <img
-              tw="hidden object-cover w-10 h-10 mx-4 rounded-full sm:block"
-              src="https://images.unsplash.com/photo-1502980426475-b83966705988?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=40&q=80"
-              alt="avatar"
-            />
-            <a tw="font-bold text-gray-700 cursor-pointer dark:text-gray-200">
-              Khatab wedaa
-            </a>
+    <>
+      <section tw="text-gray-600">
+        <div tw="container px-5 py-24 mx-auto">
+          <h1 tw="sm:text-3xl text-2xl font-medium text-center text-gray-900 mb-20">
+            Raw Denim Heirloom Man Braid
+            <br tw="hidden sm:block" />
+            Selfies Wayfarers
+          </h1>
+          <div tw="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4 md:space-y-0 space-y-6">
+            <div tw="p-4 md:w-1/3 flex">
+              <div tw="w-12 h-12 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4 flex-shrink-0">
+                <svg
+                  fill="none"
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  tw="w-6 h-6"
+                  viewBox="0 0 24 24">
+                  <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+                </svg>
+              </div>
+              <div tw="flex-grow pl-6">
+                <h2 tw="text-gray-900 text-lg font-medium mb-2">
+                  Shooting Stars
+                </h2>
+                <p tw="leading-relaxed text-base">
+                  Blue bottle crucifix vinyl post-ironic four dollar toast vegan
+                  taxidermy. Gastropub indxgo juice poutine, ramps microdosing
+                  banh mi pug VHS try-hard ugh iceland kickstarter tumblr
+                  live-edge tilde.
+                </p>
+                <a tw="mt-3 text-indigo-500 inline-flex items-center">
+                  Learn More
+                  <svg
+                    fill="none"
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    tw="w-4 h-4 ml-2"
+                    viewBox="0 0 24 24">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div tw="p-4 md:w-1/3 flex">
+              <div tw="w-12 h-12 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4 flex-shrink-0">
+                <svg
+                  fill="none"
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  tw="w-6 h-6"
+                  viewBox="0 0 24 24">
+                  <circle cx={6} cy={6} r={3} />
+                  <circle cx={6} cy={18} r={3} />
+                  <path d="M20 4L8.12 15.88M14.47 14.48L20 20M8.12 8.12L12 12" />
+                </svg>
+              </div>
+              <div tw="flex-grow pl-6">
+                <h2 tw="text-gray-900 text-lg font-medium mb-2">
+                  The Catalyzer
+                </h2>
+                <p tw="leading-relaxed text-base">
+                  Blue bottle crucifix vinyl post-ironic four dollar toast vegan
+                  taxidermy. Gastropub indxgo juice poutine, ramps microdosing
+                  banh mi pug VHS try-hard ugh iceland kickstarter tumblr
+                  live-edge tilde.
+                </p>
+                <a tw="mt-3 text-indigo-500 inline-flex items-center">
+                  Learn More
+                  <svg
+                    fill="none"
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    tw="w-4 h-4 ml-2"
+                    viewBox="0 0 24 24">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div tw="p-4 md:w-1/3 flex">
+              <div tw="w-12 h-12 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4 flex-shrink-0">
+                <svg
+                  fill="none"
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  tw="w-6 h-6"
+                  viewBox="0 0 24 24">
+                  <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" />
+                  <circle cx={12} cy={7} r={4} />
+                </svg>
+              </div>
+              <div tw="flex-grow pl-6">
+                <h2 tw="text-gray-900 text-lg font-medium mb-2">Neptune</h2>
+                <p tw="leading-relaxed text-base">
+                  Blue bottle crucifix vinyl post-ironic four dollar toast vegan
+                  taxidermy. Gastropub indxgo juice poutine, ramps microdosing
+                  banh mi pug VHS try-hard ugh iceland kickstarter tumblr
+                  live-edge tilde.
+                </p>
+                <a tw="mt-3 text-indigo-500 inline-flex items-center">
+                  Learn More
+                  <svg
+                    fill="none"
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    tw="w-4 h-4 ml-2"
+                    viewBox="0 0 24 24">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
+      </section>
+    </>
   );
 }

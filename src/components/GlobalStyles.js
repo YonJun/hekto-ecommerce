@@ -3,9 +3,14 @@ import { createGlobalStyle } from "styled-components";
 import tw, { theme, GlobalStyles as BaseStyles } from "twin.macro";
 
 const CustomStyles = createGlobalStyle`
+
   body {
     -webkit-tap-highlight-color: ${theme`colors.purple.500`};
+    font-family: 'Josefin Sans', sans-serif;
+
+    background-color: red;
     ${tw`antialiased`}    
+    
    }
 
   *:focus {
@@ -20,7 +25,7 @@ const CustomStyles = createGlobalStyle`
 
 const GlobalStyles = () => (
   <>
-    <BaseStyles />
+    {/* <BaseStyles /> */}
     <CustomStyles />
   </>
 );
