@@ -1,4 +1,4 @@
-import tw, { styled } from "twin.macro";
+import tw, { styled, css } from "twin.macro";
 import { Container } from "@chakra-ui/layout";
 import { useRef, useState } from "react";
 import {
@@ -15,14 +15,19 @@ import {
 const ListLink = () => (
   <>
     <div tw="flex flex-col py-3 md:(flex-row space-x-7 mx-0 py-0)">
-      {["Home", "Pages", "Products", "Blog", "Shop", "Contact"].map((label) => (
-        <a
-          key={label}
-          href="#"
-          tw="py-1 text-sm  text-gray-700 transition-colors duration-200 transform  dark:text-gray-200  hover:text-my-pink md:mx-2">
-          {label}
-        </a>
-      ))}
+      {["Home", "Pages", "Products", "Blog", "Shop", "Contact"].map(
+        (label, index) => (
+          <a
+            key={label}
+            href="#"
+            css={[
+              tw`py-1 text-sm  transition-colors duration-200 transform  dark:text-gray-200  hover:text-my-pink md:mx-2`,
+              index === 0 && tw`text-my-pink`,
+            ]}>
+            {label}
+          </a>
+        ),
+      )}
     </div>
 
     <div tw="relative ">
@@ -67,7 +72,7 @@ const WrapperApp = ({ children }) => {
           </Container>
         </div>
         <Container maxW="container.lg">
-          <div tw=" py-3 md:flex">
+          <div tw=" py-3 md:flex text-navy-blue">
             <div tw="flex items-center justify-between">
               <div>
                 <a
