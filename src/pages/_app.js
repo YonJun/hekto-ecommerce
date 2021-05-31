@@ -1,6 +1,7 @@
 import GlobalStyles from "../components/GlobalStyles";
 import WrapperApp from "../layouts/WrapperApp";
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
+import "keen-slider/keen-slider.min.css";
 
 const customTheme = extendTheme({
   styles: {
