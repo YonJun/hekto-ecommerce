@@ -47,7 +47,7 @@ export default function Home() {
                 alt="Lampara"
                 width="100%"
                 height="auto"
-                tw="hidden 2xl:(block absolute -left-60 w-80 h-80 top-0)"
+                tw="hidden 2xl:(block absolute -left-72 w-80 h-80 top-0)"
               />
             </div>
           </Container>
@@ -87,7 +87,7 @@ export default function Home() {
                 alt="Lampara"
                 width="100%"
                 height="auto"
-                tw="hidden 2xl:(block absolute -left-60 w-80 h-80 top-0)"
+                tw="hidden 2xl:(block absolute -left-72 w-80 h-80 top-0)"
               />
             </div>
           </Container>
