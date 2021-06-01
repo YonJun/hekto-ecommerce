@@ -7,15 +7,14 @@ const Silder = styled.div`
   height: auto;
   min-height: 65vh;
   background-color: #f2f0ff;
-  ${tw`py-10`}
 `;
 export default function Home() {
   return (
     <>
       <Carousel>
         <Silder className="keen-slider__slide">
-          <Container maxW="container.xl" tw="w-full h-full">
-            <div tw="relative flex flex-col items-center 2xl:(flex-row)  h-full">
+          <Container maxW="container.lg" tw="w-full h-full">
+            <div tw="relative flex flex-col items-center 2xl:(flex-row)  h-full py-5">
               <img
                 src="/sofa_promotional_header.png"
                 alt="Sofa"
@@ -23,7 +22,7 @@ export default function Home() {
                 height="auto"
                 tw="relative 2xl:(block absolute -right-40 )"
               />
-              <div tw="flex-col space-y-3 2xl:w-8/12">
+              <div tw="flex-col space-y-3  2xl:w-8/12 ">
                 <p tw="text-my-pink font-medium">
                   Best Furniture For Your Castle....
                 </p>
@@ -54,7 +53,7 @@ export default function Home() {
           </Container>
         </Silder>
         <Silder className="keen-slider__slide">
-          <Container maxW="container.xl" tw="w-full h-full">
+          <Container maxW="container.lg" tw="w-full h-full">
             <div tw="relative flex flex-col items-center 2xl:(flex-row)  h-full">
               <img
                 src="/sofa_promotional_header.png"
