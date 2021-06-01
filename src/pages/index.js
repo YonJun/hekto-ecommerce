@@ -59,8 +59,8 @@ export default function Home() {
     <>
       <Carousel>
         <Silder className="keen-slider__slide">
-          <Container maxW="container.xl" tw="w-full h-full bg-red-300">
-            <div tw="bg-red-600 relative 2xl:(items-center flex)  h-full">
+          <Container maxW="container.xl" tw="w-full h-full">
+            <div tw="relative flex flex-col items-center 2xl:(flex-row)  h-full">
               <img
                 src="/sofa_promotional_header.png"
                 alt="Sofa"
