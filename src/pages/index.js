@@ -1,82 +1,11 @@
-import tw, { styled } from "twin.macro";
+import tw, { css, styled, theme } from "twin.macro";
 import { useKeenSlider } from "keen-slider/react";
 import { useRef, useState, useEffect } from "react";
 import { Container } from "@chakra-ui/layout";
 
-const CarouselWrapper = styled.div`
-  [class^="number-slide"],
-  [class*=" number-slide"] {
-    background: grey;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 50px;
-    color: #fff;
-    font-weight: 500;
-    height: 300px;
-    max-height: 100vh;
-  }
+import { Button } from "@chakra-ui/button";
 
-  .number-slide1 {
-    background: rgb(64, 175, 255);
-    background: linear-gradient(
-      128deg,
-      rgba(64, 175, 255, 1) 0%,
-      rgba(63, 97, 255, 1) 100%
-    );
-  }
-
-  .number-slide2 {
-    background: rgb(255, 75, 64);
-    background: linear-gradient(
-      128deg,
-      rgba(255, 154, 63, 1) 0%,
-      rgba(255, 75, 64, 1) 100%
-    );
-  }
-
-  .number-slide3 {
-    background: rgb(182, 255, 64);
-    background: linear-gradient(
-      128deg,
-      rgba(182, 255, 64, 1) 0%,
-      rgba(63, 255, 71, 1) 100%
-    );
-    background: linear-gradient(
-      128deg,
-      rgba(189, 255, 83, 1) 0%,
-      rgba(43, 250, 82, 1) 100%
-    );
-  }
-
-  .number-slide4 {
-    background: rgb(64, 255, 242);
-    background: linear-gradient(
-      128deg,
-      rgba(64, 255, 242, 1) 0%,
-      rgba(63, 188, 255, 1) 100%
-    );
-  }
-
-  .number-slide5 {
-    background: rgb(255, 64, 156);
-    background: linear-gradient(
-      128deg,
-      rgba(255, 64, 156, 1) 0%,
-      rgba(255, 63, 63, 1) 100%
-    );
-  }
-  .number-slide6 {
-    background: rgb(64, 76, 255);
-    background: linear-gradient(
-      128deg,
-      rgba(64, 76, 255, 1) 0%,
-      rgba(174, 63, 255, 1) 100%
-    );
-  }
-`;
-
-const Carousel = () => {
+const Carousel = ({ children }) => {
   const [pause, setPause] = useState(false);
   const timer = useRef();
   const [sliderRef, slider] = useKeenSlider({
@@ -112,31 +41,64 @@ const Carousel = () => {
 
   return (
     <>
-      <CarouselWrapper ref={sliderRef} className="keen-slider">
-        <div className="keen-slider__slide number-slide1">1</div>
-        <div className="keen-slider__slide number-slide2">2</div>
-        <div className="keen-slider__slide number-slide3">3</div>
-        <div className="keen-slider__slide number-slide4">4</div>
-        <div className="keen-slider__slide number-slide5">5</div>
-        <div className="keen-slider__slide number-slide6">6</div>
-      </CarouselWrapper>
+      <div ref={sliderRef} className="keen-slider">
+        {children}
+      </div>
     </>
   );
 };
 
-const HomeWrapper = styled.div`
-  height: 80vh;
+const Silder = styled.div`
+  height: auto;
+  min-height: 68vh;
   background-color: #f2f0ff;
+  ${tw`py-5`}
 `;
-
 export default function Home() {
   return (
     <>
-      <HomeWrapper>
-        <Container maxW="container.xl">
-          <Carousel />
-        </Container>
-      </HomeWrapper>
+      <Carousel>
+        <Silder className="keen-slider__slide">
+          <Container maxW="container.xl" tw="w-full h-full bg-red-300">
+            <div tw="bg-red-600 relative 2xl:(items-center flex)  h-full">
+              <img
+                src="/sofa_promotional_header.png"
+                alt="Sofa"
+                style={{ width: "30vw", minWidth: 300 }}
+                height="auto"
+                tw="relative 2xl:(block absolute -right-40 )"
+              />
+              <div tw="flex-col space-y-3 2xl:w-8/12">
+                <p tw="text-my-pink font-medium">
+                  Best Furniture For Your Castle....
+                </p>
+                <h1 tw="font-black text-5xl leading-tight">
+                  New Furniture Collection Trends in 2020
+                </h1>
+                <p tw="w-10/12" css={css({ color: "#8A8FB9" })}>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna
+                  in est adipiscing in phasellus non in justo.
+                </p>
+                <div>
+                  <Button
+                    borderRadius="2px"
+                    colorScheme="pink"
+                    backgroundColor={theme`colors[my-pink]`}>
+                    Shop Now
+                  </Button>
+                </div>
+              </div>
+              <img
+                src="/image_32.png"
+                alt="Lampara"
+                width="100%"
+                height="auto"
+                tw="hidden 2xl:(block absolute -left-60 w-80 h-80 top-0)"
+              />
+            </div>
+          </Container>
+        </Silder>
+      </Carousel>
     </>
   );
 }
