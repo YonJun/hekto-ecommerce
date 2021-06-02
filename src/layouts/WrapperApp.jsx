@@ -11,6 +11,7 @@ import {
   DrawerCloseButton,
   useDisclosure,
 } from "@chakra-ui/react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const ListLink = () => (
   <>
@@ -65,9 +66,27 @@ const WrapperApp = ({ children }) => {
             <ul tw="flex list-none space-x-5">
               <li>English</li>
               <li>USD</li>
-              <li>Login</li>
-              <li>Wishlist</li>
-              <li>5</li>
+              <li>
+                <button>
+                  <span>Login</span>
+                  <span tw="pl-2 text-xs">
+                    <FontAwesomeIcon icon={["far", "user"]} />
+                  </span>
+                </button>
+              </li>
+              <li>
+                <button>
+                  <span>Wishlist</span>
+                  <span tw="pl-2 text-xs">
+                    <FontAwesomeIcon icon={["far", "heart"]} />
+                  </span>
+                </button>
+              </li>
+              <li>
+                <button>
+                  <FontAwesomeIcon icon={["fas", "shopping-cart"]} />
+                </button>
+              </li>
             </ul>
           </Container>
         </div>
