@@ -7,12 +7,12 @@ const Dots = styled.div`
   ${tw`space-x-2 flex justify-center relative py-3`}
   .dot {
     border: none;
-    width: 10px;
+    ${tw`rounded-xl`}
+    width: 15px;
     height: 10px;
-    background: #c5c5c5;
-    border-radius: 50%;
-
+    background: #febad7;
     cursor: pointer;
+    transition: width 0.5s;
   }
 
   .dot:focus {
@@ -20,7 +20,8 @@ const Dots = styled.div`
   }
 
   .dot.active {
-    background: #000;
+    width: 25px;
+    background: #fb2e86;
   }
 `;
 const SliderWrapper = ({ children }) => {
