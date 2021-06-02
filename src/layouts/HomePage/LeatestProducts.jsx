@@ -55,7 +55,7 @@ const Product = ({ id, img, title, sale, price, oldPrice }) => {
         />
       </div>
       <div tw="flex py-2 justify-between">
-        <h5 tw="border border-b-2 border-sky-blue">{title}</h5>
+        <h5 tw="border-b-2 border-sky-blue">{title}</h5>
         <div>
           <p tw="inline-block font-normal ">{`$${price}`}</p>
           {oldPrice && (
@@ -70,6 +70,20 @@ const LeatestProducts = () => {
   return (
     <Container maxW="container.lg">
       <Subtitle tw="pb-5">Leatest Products</Subtitle>
+      <ul tw="pb-5 text-navy-blue text-xl  flex space-x-5 justify-center list-none">
+        <li tw="text-my-pink underline">
+          <a href="/#">New Arrival</a>
+        </li>
+        <li>
+          <a href="/#">Best Seller</a>
+        </li>
+        <li>
+          <a href="/#">Featured</a>
+        </li>
+        <li>
+          <a href="/#">Special Offer</a>
+        </li>
+      </ul>
       <div tw="grid grid-flow-row grid-cols-1 md:grid-cols-2 lg:grid-cols-3 place-items-center gap-4">
         {[...Array(6).keys()].map((idx) => (
           <Product
@@ -77,7 +91,7 @@ const LeatestProducts = () => {
             id={idx}
             sale={idx % 2 === 0}
             code="Y523201"
-            price="42.00"
+            price={idx % 2 === 0 ? "42.00" : "60.00"}
             title={"Comfort Handy Craft"}
             oldPrice={idx % 2 === 0 ? "60.00" : ""}
             img="https://pngimg.com/uploads/chair/chair_PNG6893.png"
