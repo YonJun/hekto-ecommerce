@@ -126,9 +126,10 @@ const Product = ({ id, img, title, code, price }) => {
         />
         <div tw="pb-2 flex justify-center absolute bottom-0 left-0 w-full invisible p-3 group-hover:visible">
           <button
-            tw="px-4 py-2 text-white bg-green-500 rounded"
+            tw="px-4 py-2 text-white rounded"
+            style={{ backgroundColor: "#08D15F" }}
             onClick={() => alert(code)}>
-            View Details
+            <span tw="text-sm">View Details</span>
           </button>
         </div>
       </div>
