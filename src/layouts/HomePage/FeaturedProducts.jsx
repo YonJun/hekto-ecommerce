@@ -2,7 +2,8 @@ import tw, { styled, css } from "twin.macro";
 import { useKeenSlider } from "keen-slider/react";
 import { Container } from "@chakra-ui/layout";
 import { useEffect, useMemo, useRef, useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import ProductOptions from "../../components/HomePage/ProductOptions";
+import { Subtitle } from "../../components/HomePage/Typography";
 
 const Dots = styled.div`
   ${tw`space-x-2 flex justify-center relative py-3`}
@@ -111,31 +112,12 @@ const LineClampStyle = css`
   overflow: hidden;
 `;
 
-const IconButton = styled.button`
-  width: 30px;
-  height: 30px;
-  color: #189df4;
-
-  ${tw`p-1 text-center flex items-center justify-center rounded-full hover:(text-my-blue shadow)`}
-  &:hover {
-    background-color: #eeeffb;
-  }
-`;
-
 const Product = ({ id, img, title, code, price }) => {
   return (
     <div className="group" tw="bg-white text-navy-blue shadow-md w-full">
-      <div tw="relative bg-gray-50 py-5 ">
-        <div tw="absolute flex space-x-4 top-0 left-0 invisible p-3 group-hover:visible">
-          <IconButton>
-            <FontAwesomeIcon icon={["fas", "shopping-cart"]} />
-          </IconButton>
-          <IconButton>
-            <FontAwesomeIcon icon={["far", "heart"]} />
-          </IconButton>
-          <IconButton>
-            <FontAwesomeIcon icon={["fas", "search-plus"]} />
-          </IconButton>
+      <div tw="relative py-5 bg-gray-50 group-hover:bg-white">
+        <div tw="absolute top-0 left-0 invisible group-hover:visible">
+          <ProductOptions />
         </div>
         <img
           src={img}
@@ -174,9 +156,8 @@ const FreaturedProducts = () => {
   return (
     <Container maxW="container.lg">
       <div tw="">
-        <h2 tw="text-3xl font-bold text-navy-blue text-center pb-5">
-          Featured Products
-        </h2>
+        <Subtitle tw="pb-5"> Featured Products</Subtitle>
+
         <SliderWrapper>
           {[...Array(16).keys()].map((idx) => (
             <div key={idx} className="keen-slider__slide" tw="p-1">
