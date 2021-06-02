@@ -1,12 +1,51 @@
-import tw from "twin.macro";
+import tw, { styled } from "twin.macro";
 import { Container } from "@chakra-ui/layout";
 import { Subtitle } from "../../components/HomePage/Typography";
 import ProductOptions from "../../components/HomePage/ProductOptions";
 
-const Product = ({ id, img, title, code, price }) => {
+const SaleText = styled.span`
+  /* Abs positioning makes it not take up vert space */
+  width: 100%;
+  position: absolute;
+  top: 33px;
+  left: 0;
+  text-align: center;
+
+  /* Border is the new background */
+  background: none;
+
+  /* Rotate from top left corner (not default) */
+  transform-origin: 0 0;
+  transform: rotate(-20deg);
+`;
+
+const Sale = () => {
   return (
-    <div className="group" tw="bg-white text-navy-blue shadow-md w-full">
+    <div tw="relative inline-block">
+      <img
+        src="/assets/flag_indicator.png"
+        width="100%"
+        height="auto"
+        style={{ maxWidth: 100 }}
+        tw="block mx-auto"
+      />
+      <SaleText tw="text-white">Sale</SaleText>
+    </div>
+  );
+};
+
+const Product = ({ id, img, title, sale, price, oldPrice }) => {
+  return (
+    <div className="group" tw="bg-white text-navy-blue w-full">
       <div tw="relative py-5 bg-gray-50 group-hover:bg-white">
+        {sale && (
+          <div tw="absolute top-0 left-0">
+            <Sale />
+          </div>
+        )}
+        <div tw="absolute z-10 bottom-0 left-0 invisible group-hover:visible">
+          <ProductOptions vertical />
+        </div>
         <img
           src={img}
           width="100%"
@@ -14,26 +53,15 @@ const Product = ({ id, img, title, code, price }) => {
           style={{ maxWidth: 120 }}
           tw="block mx-auto"
         />
-        <div tw="pb-2 flex justify-center absolute bottom-0 left-0 w-full invisible p-3 group-hover:visible">
-          <button
-            tw="px-4 py-2 text-white rounded"
-            style={{ backgroundColor: "#08D15F" }}
-            onClick={() => alert(code)}>
-            <span tw="text-sm">View Details</span>
-          </button>
-        </div>
-        <div tw="absolute bottom-0 left-0 invisible group-hover:visible">
-          <ProductOptions vertical />
-        </div>
       </div>
-      <div
-        tw="flex flex-col space-y-2 text-center py-3 px-2 group-hover:(text-white bg-my-blue)"
-        style={{ minHeight: 150 }}>
-        <h5 tw="font-semibold text-lg text-my-pink group-hover:text-white">
-          {id}-{title}
-        </h5>
-        <p tw="font-normal">{`Code - ${code}`}</p>
-        <span tw="text-lg font-light">{`$${price}`}</span>
+      <div tw="flex py-2 justify-between">
+        <h5 tw="border border-b-2 border-sky-blue">{title}</h5>
+        <div>
+          <p tw="inline-block font-normal ">{`$${price}`}</p>
+          {oldPrice && (
+            <span tw="inline-block pl-3 text-sm text-my-pink line-through">{`$${oldPrice}`}</span>
+          )}
+        </div>
       </div>
     </div>
   );
@@ -42,13 +70,20 @@ const LeatestProducts = () => {
   return (
     <Container maxW="container.lg">
       <Subtitle tw="pb-5">Leatest Products</Subtitle>
-      <Product
-        id={0}
-        code="Y523201"
-        price="42.00"
-        title={"Cantilever chair"}
-        img="https://pngimg.com/uploads/chair/chair_PNG6893.png"
-      />
+      <div tw="grid grid-flow-row grid-cols-1 md:grid-cols-2 lg:grid-cols-3 place-items-center gap-4">
+        {[...Array(6).keys()].map((idx) => (
+          <Product
+            key={idx}
+            id={idx}
+            sale={idx % 2 === 0}
+            code="Y523201"
+            price="42.00"
+            title={"Comfort Handy Craft"}
+            oldPrice={idx % 2 === 0 ? "60.00" : ""}
+            img="https://pngimg.com/uploads/chair/chair_PNG6893.png"
+          />
+        ))}
+      </div>
     </Container>
   );
 };
