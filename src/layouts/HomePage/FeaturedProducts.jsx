@@ -115,7 +115,7 @@ const LineClampStyle = css`
 const Product = ({ id, img, title, code, price }) => {
   return (
     <div className="group" tw="bg-white text-navy-blue shadow-md w-full">
-      <div tw="relative py-5 bg-gray-50 group-hover:bg-white">
+      <div tw="relative py-12 bg-gray-50 group-hover:bg-white">
         <div tw="absolute top-0 left-0 invisible group-hover:visible">
           <ProductOptions />
         </div>
