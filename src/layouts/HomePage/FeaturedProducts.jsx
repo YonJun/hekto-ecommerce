@@ -1,4 +1,4 @@
-import tw, { styled, css } from "twin.macro";
+import tw, { styled, css, theme } from "twin.macro";
 import { useKeenSlider } from "keen-slider/react";
 import { Container } from "@chakra-ui/layout";
 import { useEffect, useMemo, useRef, useState } from "react";
@@ -26,6 +26,7 @@ const Dots = styled.div`
     background: #fb2e86;
   }
 `;
+
 const SliderWrapper = ({ children }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
@@ -33,10 +34,20 @@ const SliderWrapper = ({ children }) => {
   const timer = useRef();
 
   const [sliderRef, slider] = useKeenSlider({
-    slidesPerView: 4,
+    slidesPerView: 2,
     spacing: 15,
     loop: true,
     duration: 1000,
+    breakpoints: {
+      [`(min-width: ${theme`screens.md`})`]: {
+        slidesPerView: 3,
+        mode: "free-snap",
+      },
+      [`(min-width: ${theme`screens.lg`})`]: {
+        slidesPerView: 4,
+        mode: "free-snap",
+      },
+    },
     slideChanged(s) {
       setCurrentSlide(s.details().relativeSlide);
     },
