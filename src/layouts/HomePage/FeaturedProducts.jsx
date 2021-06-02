@@ -2,6 +2,7 @@ import tw, { styled, css } from "twin.macro";
 import { useKeenSlider } from "keen-slider/react";
 import { Container } from "@chakra-ui/layout";
 import { useEffect, useMemo, useRef, useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Dots = styled.div`
   ${tw`space-x-2 flex justify-center relative py-3`}
@@ -158,6 +159,10 @@ const FreaturedProducts = () => {
       <div tw="">
         <h2 tw="text-3xl font-bold text-navy-blue text-center pb-5">
           Featured Products
+          <span>
+            <FontAwesomeIcon icon={["fab", "facebook"]} />
+            <FontAwesomeIcon tw="text-xl" icon={["far", "heart"]} />
+          </span>
         </h2>
         <SliderWrapper>
           {[...Array(16).keys()].map((idx) => (
