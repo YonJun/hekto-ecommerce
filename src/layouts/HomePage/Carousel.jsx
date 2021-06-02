@@ -116,7 +116,7 @@ export default function Carousel() {
           <Container maxW="container.lg" tw="w-full h-full">
             <div tw="relative flex flex-col items-center 2xl:(flex-row)  h-full py-5">
               <img
-                src="/sofa_promotional_header.png"
+                src="/assets/sofa_promotional_header.png"
                 alt="Sofa"
                 style={{ width: "30vw", minWidth: 300 }}
                 height="auto"
@@ -143,7 +143,7 @@ export default function Carousel() {
                 </div>
               </div>
               <img
-                src="/image_32.png"
+                src="/assets/image_32.png"
                 alt="Lampara"
                 width="100%"
                 height="auto"
@@ -156,7 +156,7 @@ export default function Carousel() {
           <Container maxW="container.lg" tw="w-full h-full">
             <div tw="relative flex flex-col items-center 2xl:(flex-row)  h-full">
               <img
-                src="/sofa_promotional_header.png"
+                src="/assets/sofa_promotional_header.png"
                 alt="Sofa"
                 style={{ width: "30vw", minWidth: 300 }}
                 height="auto"
@@ -183,7 +183,7 @@ export default function Carousel() {
                 </div>
               </div>
               <img
-                src="/image_32.png"
+                src="/assets/image_32.png"
                 alt="Lampara"
                 width="100%"
                 height="auto"

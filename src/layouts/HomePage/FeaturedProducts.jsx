@@ -114,10 +114,10 @@ const Product = ({ id, img, title, code, price }) => {
     <div
       className="group"
       tw="bg-white text-navy-blue shadow-md w-full hover:bg-my-blue"
-      style={{ minHeight: 380 }}>
+      style={{ minHeight: 390 }}>
       <div tw="relative bg-gray-50 py-5 ">
         <div tw="bg-red-500 absolute flex space-x-4 top-0 left-0 invisible p-3 group-hover:visible">
-          <span>1</span>
+          <span tw="hover:text-white">1</span>
           <span>2</span>
           <span>3</span>
         </div>
@@ -125,7 +125,7 @@ const Product = ({ id, img, title, code, price }) => {
           src={img}
           width="100%"
           height="auto"
-          style={{ maxWidth: 150 }}
+          style={{ maxWidth: 120 }}
           tw="block mx-auto"
         />
         <div tw="pb-2 flex justify-center absolute bottom-0 left-0 w-full invisible p-3 group-hover:visible">
@@ -171,7 +171,7 @@ const FreaturedProducts = () => {
                     ? "Cantilever chair Cantilever chair Cantilever chair"
                     : "Cantilever chair"
                 }
-                img="https://i.pinimg.com/originals/82/34/5d/82345d989630d9b4b8dcca81eb317c46.png"
+                img="https://pngimg.com/uploads/chair/chair_PNG6893.png"
               />
             </div>
           ))}
