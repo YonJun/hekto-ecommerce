@@ -1,6 +1,106 @@
-import tw, { css } from "twin.macro";
+import tw, { styled, css } from "twin.macro";
 import { useKeenSlider } from "keen-slider/react";
 import { Container } from "@chakra-ui/layout";
+import { useEffect, useMemo, useRef, useState } from "react";
+
+const Dots = styled.div`
+  ${tw`space-x-2 flex justify-center relative py-3`}
+  .dot {
+    border: none;
+    width: 10px;
+    height: 10px;
+    background: #c5c5c5;
+    border-radius: 50%;
+
+    cursor: pointer;
+  }
+
+  .dot:focus {
+    outline: none;
+  }
+
+  .dot.active {
+    background: #000;
+  }
+`;
+const SliderWrapper = ({ children }) => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const [pause, setPause] = useState(false);
+  const timer = useRef();
+
+  const [sliderRef, slider] = useKeenSlider({
+    slidesPerView: 4,
+    spacing: 15,
+    loop: true,
+    duration: 1000,
+    slideChanged(s) {
+      setCurrentSlide(s.details().relativeSlide);
+    },
+    dragStart: () => {
+      setPause(true);
+    },
+    dragEnd: () => {
+      setPause(false);
+    },
+  });
+
+  useEffect(() => {
+    sliderRef.current.addEventListener("mouseover", () => {
+      setPause(true);
+    });
+    sliderRef.current.addEventListener("mouseout", () => {
+      setPause(false);
+    });
+  }, [sliderRef]);
+
+  useEffect(() => {
+    timer.current = setInterval(() => {
+      if (!pause && slider) {
+        slider.next();
+      }
+    }, 5000);
+    return () => {
+      clearInterval(timer.current);
+    };
+  }, [pause, slider]);
+
+  const countDots = useMemo(() => {
+    if (slider) {
+      return parseInt(
+        slider.details().size / slider.details().slidesPerView,
+        10,
+      );
+    }
+    return 0;
+  }, [slider]);
+
+  return (
+    <>
+      <div ref={sliderRef} className="keen-slider">
+        {children}
+      </div>
+      <div tw="w-full">
+        {slider && (
+          <Dots>
+            {[...Array(countDots).keys()].map((idx) => {
+              const newCurrentSlide = parseInt(currentSlide / countDots, 10);
+              return (
+                <button
+                  key={idx}
+                  onClick={() => {
+                    slider.moveToSlideRelative(idx * countDots);
+                  }}
+                  className={"dot" + (newCurrentSlide === idx ? " active" : "")}
+                />
+              );
+            })}
+          </Dots>
+        )}
+      </div>
+    </>
+  );
+};
 
 const LineClampStyle = css`
   display: -webkit-box;
@@ -8,7 +108,7 @@ const LineClampStyle = css`
   -webkit-box-orient: vertical;
   overflow: hidden;
 `;
-const Product = ({ img, title, code, price }) => {
+const Product = ({ id, img, title, code, price }) => {
   return (
     <div className="group" tw="bg-white text-navy-blue shadow-md w-full">
       <div tw="relative bg-gray-50 py-5">
@@ -38,7 +138,7 @@ const Product = ({ img, title, code, price }) => {
             tw`font-semibold text-lg text-my-pink group-hover:text-white`,
             LineClampStyle,
           ]}>
-          {title}
+          {id}-{title}
         </h5>
         <p tw="font-normal">{`Code - ${code}`}</p>
         <span tw="text-lg font-light">{`$${price}`}</span>
@@ -48,18 +148,17 @@ const Product = ({ img, title, code, price }) => {
 };
 
 const FreaturedProducts = () => {
-  const [sliderRef] = useKeenSlider({ slidesPerView: 4, spacing: 15 });
-
   return (
     <Container maxW="container.lg">
       <div tw="">
         <h2 tw="text-3xl font-bold text-navy-blue text-center pb-5">
           Featured Products
         </h2>
-        <div ref={sliderRef} className="keen-slider">
+        <SliderWrapper>
           {[...Array(16).keys()].map((idx) => (
             <div key={idx} className="keen-slider__slide" tw="p-1">
               <Product
+                id={idx}
                 code="Y523201"
                 price="42.00"
                 title="Cantilever chair Cantilever chairCantilever chair"
@@ -67,7 +166,7 @@ const FreaturedProducts = () => {
               />
             </div>
           ))}
-        </div>
+        </SliderWrapper>
       </div>
     </Container>
   );
