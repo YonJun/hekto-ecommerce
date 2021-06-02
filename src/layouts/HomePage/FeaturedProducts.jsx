@@ -110,17 +110,32 @@ const LineClampStyle = css`
   -webkit-box-orient: vertical;
   overflow: hidden;
 `;
+
+const IconButton = styled.button`
+  width: 30px;
+  height: 30px;
+  color: #189df4;
+
+  ${tw`p-1 text-center flex items-center justify-center rounded-full hover:(text-my-blue shadow)`}
+  &:hover {
+    background-color: #eeeffb;
+  }
+`;
+
 const Product = ({ id, img, title, code, price }) => {
   return (
-    <div
-      className="group"
-      tw="bg-white text-navy-blue shadow-md w-full hover:bg-my-blue"
-      style={{ minHeight: 390 }}>
+    <div className="group" tw="bg-white text-navy-blue shadow-md w-full">
       <div tw="relative bg-gray-50 py-5 ">
-        <div tw="bg-red-500 absolute flex space-x-4 top-0 left-0 invisible p-3 group-hover:visible">
-          <span tw="hover:text-white">1</span>
-          <span>2</span>
-          <span>3</span>
+        <div tw="absolute flex space-x-4 top-0 left-0 invisible p-3 group-hover:visible">
+          <IconButton>
+            <FontAwesomeIcon icon={["fas", "shopping-cart"]} />
+          </IconButton>
+          <IconButton>
+            <FontAwesomeIcon icon={["far", "heart"]} />
+          </IconButton>
+          <IconButton>
+            <FontAwesomeIcon icon={["fas", "search-plus"]} />
+          </IconButton>
         </div>
         <img
           src={img}
@@ -138,7 +153,9 @@ const Product = ({ id, img, title, code, price }) => {
           </button>
         </div>
       </div>
-      <div tw="flex flex-col space-y-2 text-center py-3 px-2 group-hover:(text-white)">
+      <div
+        tw="flex flex-col space-y-2 text-center py-3 px-2 group-hover:(text-white bg-my-blue)"
+        style={{ minHeight: 150 }}>
         <h5
           css={[
             tw`font-semibold text-lg text-my-pink group-hover:text-white`,
@@ -159,10 +176,6 @@ const FreaturedProducts = () => {
       <div tw="">
         <h2 tw="text-3xl font-bold text-navy-blue text-center pb-5">
           Featured Products
-          <span>
-            <FontAwesomeIcon icon={["fab", "facebook"]} />
-            <FontAwesomeIcon tw="text-xl" icon={["far", "heart"]} />
-          </span>
         </h2>
         <SliderWrapper>
           {[...Array(16).keys()].map((idx) => (
