@@ -81,10 +81,13 @@ const SliderWrapper = ({ children }) => {
 
   const countDots = useMemo(() => {
     if (slider) {
-      return parseInt(
+      const d = parseInt(
         slider.details().size / slider.details().slidesPerView,
         10,
       );
+      // console.log("countDots", d);
+      // console.log("slider.details().size", slider.details().size);
+      return d;
     }
     return 0;
   }, [slider]);
@@ -98,14 +101,19 @@ const SliderWrapper = ({ children }) => {
         {slider && (
           <Dots>
             {[...Array(countDots).keys()].map((idx) => {
-              const newCurrentSlide = parseInt(currentSlide / countDots, 10);
+              const newCurrentSlide = Math.round(
+                parseFloat((countDots * currentSlide) / slider.details().size),
+              );
               return (
                 <button
                   key={idx}
                   onClick={() => {
-                    slider.moveToSlideRelative(idx * countDots);
+                    slider.moveToSlideRelative(
+                      idx * slider.details().slidesPerView,
+                    );
                   }}
-                  className={"dot" + (newCurrentSlide === idx ? " active" : "")}
+                  title={idx * slider.details().slidesPerView}
+                  className={`dot ${newCurrentSlide === idx && "active"}`}
                 />
               );
             })}
