@@ -71,7 +71,7 @@ const LeatestProducts = () => {
   return (
     <Container maxW="container.lg">
       <Subtitle tw="pb-5">Leatest Products</Subtitle>
-      <ul tw="pb-5 text-navy-blue text-xl  flex space-x-5 justify-center list-none">
+      <ul tw="pb-5 text-navy-blue  md:text-xl  flex space-x-5 justify-center list-none">
         <li tw="text-my-pink underline">
           <a href="/#">New Arrival</a>
         </li>
