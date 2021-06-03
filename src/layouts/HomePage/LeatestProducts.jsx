@@ -1,5 +1,5 @@
 import tw, { styled, theme } from "twin.macro";
-import { Container } from "@chakra-ui/layout";
+
 import { Subtitle } from "../../components/HomePage/Typography";
 import ProductOptions from "../../components/HomePage/ProductOptions";
 
@@ -69,7 +69,7 @@ const Product = ({ id, img, title, sale, price, oldPrice }) => {
 const LeatestProducts = () => {
   console.log("Leatest Products", theme`colors.black`, theme`screens.lg`);
   return (
-    <Container maxW="container.lg">
+    <>
       <Subtitle tw="pb-5">Leatest Products</Subtitle>
       <ul tw="pb-5 text-navy-blue  md:text-xl  flex space-x-5 justify-center list-none">
         <li tw="text-my-pink underline">
@@ -99,7 +99,7 @@ const LeatestProducts = () => {
           />
         ))}
       </div>
-    </Container>
+    </>
   );
 };
 

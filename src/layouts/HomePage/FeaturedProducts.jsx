@@ -1,6 +1,6 @@
 import tw, { styled, css, theme } from "twin.macro";
 import { useKeenSlider } from "keen-slider/react";
-import { Container } from "@chakra-ui/layout";
+
 import { useEffect, useMemo, useRef, useState } from "react";
 import ProductOptions from "../../components/HomePage/ProductOptions";
 import { Subtitle } from "../../components/HomePage/Typography";
@@ -173,29 +173,27 @@ const Product = ({ id, img, title, code, price }) => {
 
 const FreaturedProducts = () => {
   return (
-    <Container maxW="container.lg">
-      <div tw="">
-        <Subtitle tw="pb-5"> Featured Products</Subtitle>
+    <>
+      <Subtitle tw="pb-5"> Featured Products</Subtitle>
 
-        <SliderWrapper>
-          {[...Array(16).keys()].map((idx) => (
-            <div key={idx} className="keen-slider__slide" tw="p-1">
-              <Product
-                id={idx}
-                code="Y523201"
-                price="42.00"
-                title={
-                  idx % 2 === 0
-                    ? "Cantilever chair Cantilever chair Cantilever chair"
-                    : "Cantilever chair"
-                }
-                img="https://pngimg.com/uploads/chair/chair_PNG6893.png"
-              />
-            </div>
-          ))}
-        </SliderWrapper>
-      </div>
-    </Container>
+      <SliderWrapper>
+        {[...Array(16).keys()].map((idx) => (
+          <div key={idx} className="keen-slider__slide" tw="p-1">
+            <Product
+              id={idx}
+              code="Y523201"
+              price="42.00"
+              title={
+                idx % 2 === 0
+                  ? "Cantilever chair Cantilever chair Cantilever chair"
+                  : "Cantilever chair"
+              }
+              img="https://pngimg.com/uploads/chair/chair_PNG6893.png"
+            />
+          </div>
+        ))}
+      </SliderWrapper>
+    </>
   );
 };
 
