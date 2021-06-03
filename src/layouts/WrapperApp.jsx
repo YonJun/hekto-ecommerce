@@ -59,17 +59,17 @@ const WrapperApp = ({ children }) => {
       <nav tw="bg-white shadow dark:bg-gray-800">
         <div tw="bg-my-purple text-white">
           <Container maxW="container.lg" tw="flex py-2 text-sm justify-between">
-            <div tw="text-left">
+            <div tw="text-left hidden md:block ">
               <p tw="inline-block">demo@gmail.com</p>
               <p tw="inline-block ml-5">(12345)67890</p>
             </div>
-            <ul tw="flex list-none space-x-5">
+            <ul tw="flex items-center w-full list-none space-x-5 justify-center md:justify-end">
               <li>English</li>
               <li>USD</li>
               <li>
                 <button>
                   <span>Login</span>
-                  <span tw="pl-2 text-xs">
+                  <span tw="md:pl-1 lg:pl-2 text-xs">
                     <FontAwesomeIcon icon={["far", "user"]} />
                   </span>
                 </button>
@@ -77,7 +77,7 @@ const WrapperApp = ({ children }) => {
               <li>
                 <button>
                   <span>Wishlist</span>
-                  <span tw="pl-2 text-xs">
+                  <span tw="md:pl-1 lg:pl-2 text-xs">
                     <FontAwesomeIcon icon={["far", "heart"]} />
                   </span>
                 </button>
