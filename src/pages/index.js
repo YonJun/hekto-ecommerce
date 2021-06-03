@@ -1,15 +1,22 @@
 import { Container } from "@chakra-ui/layout";
-import tw from "twin.macro";
+
+import tw, { styled } from "twin.macro";
 import Carousel from "../layouts/HomePage/Carousel";
 import FreaturedProducts from "../layouts/HomePage/FeaturedProducts";
+import LatestTrendingProducts from "../layouts/HomePage/LatestTrendingProducts";
 import LeatestProducts from "../layouts/HomePage/LeatestProducts";
 import ShopexOffer from "../layouts/HomePage/ShopexOffer";
 import TrendingProducts from "../layouts/HomePage/TrendingProducts";
 
+const CustomBgWrapper = styled.div`
+  background-color: #f2f0ff;
+`;
 export default function Home() {
   return (
     <>
-      <Carousel />
+      <CustomBgWrapper>
+        <Carousel />
+      </CustomBgWrapper>
       <Container maxWidth="container.lg">
         <div tw="py-5">
           <FreaturedProducts />
@@ -24,6 +31,13 @@ export default function Home() {
           <TrendingProducts />
         </div>
       </Container>
+      <CustomBgWrapper tw="my-24">
+        <Container maxW="container.lg">
+          <div tw="py-5">
+            <LatestTrendingProducts />
+          </div>
+        </Container>
+      </CustomBgWrapper>
     </>
   );
 }

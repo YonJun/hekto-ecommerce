@@ -106,7 +106,6 @@ const SlidersWrapper = ({ children }) => {
 const Silder = styled.div`
   height: auto;
   min-height: 65vh;
-  background-color: #f2f0ff;
 `;
 export default function Carousel() {
   return (
