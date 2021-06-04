@@ -38,6 +38,11 @@ export default function Home() {
           </div>
         </Container>
       </CustomBgWrapper>
+      <Container maxW="container.lg">
+        <div tw="py-5">
+          <TrendingProducts />
+        </div>
+      </Container>
     </>
   );
 }

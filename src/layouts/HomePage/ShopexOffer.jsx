@@ -21,9 +21,9 @@ const ShopexOffer = () => {
           "/assets/24-hours-support.png",
           "/assets/premium-quality.png",
           "/assets/free-delivery.png",
-        ].map((src) => (
+        ].map((src, idx) => (
           <Card
-            key={src}
+            key={idx}
             img={src}
             title="24/7 Support"
             description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Massa purus gravida."
