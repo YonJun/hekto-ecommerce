@@ -2,6 +2,7 @@ import { Container } from "@chakra-ui/layout";
 
 import tw, { styled } from "twin.macro";
 import Carousel from "../layouts/HomePage/Carousel";
+import DiscountItem from "../layouts/HomePage/DiscountItem";
 import FreaturedProducts from "../layouts/HomePage/FeaturedProducts";
 import LatestTrendingProducts from "../layouts/HomePage/LatestTrendingProducts";
 import LeatestProducts from "../layouts/HomePage/LeatestProducts";
@@ -41,6 +42,9 @@ export default function Home() {
       <Container maxW="container.lg">
         <div tw="py-5">
           <TrendingProducts />
+        </div>
+        <div tw="py-5">
+          <DiscountItem />
         </div>
       </Container>
     </>
