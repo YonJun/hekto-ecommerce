@@ -17,7 +17,7 @@ const customTheme = extendTheme({
 const App = ({ Component, pageProps }) => (
   <>
     <GlobalStyles />
-    <ChakraProvider theme={customTheme}>
+    <ChakraProvider theme={customTheme} resetCSS={false}>
       <WrapperApp>
         <Component {...pageProps} />
       </WrapperApp>
