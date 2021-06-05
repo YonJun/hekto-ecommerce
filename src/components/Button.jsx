@@ -16,7 +16,7 @@ export const Button = (props) => {
     <button
       {...rest}
       css={[
-        tw`rounded py-2 px-8 bg-my-pink text-white hover:bg-pink-600 focus:(outline-none ring-2 ring-pink-500 ring-opacity-50)`,
+        tw`rounded py-2 px-6 bg-my-pink text-white hover:bg-pink-600 focus:(outline-none ring-2 ring-pink-500 ring-opacity-50)`,
         fullWidth && tw`w-full`,
         size === "xs" && tw`text-xs`,
         size === "sm" && tw`text-sm`,
