@@ -18,7 +18,7 @@ const DiscountItem = () => {
           <a href="/#">Sofa Colletion</a>
         </li>
       </ul>
-      <div tw="px-5 grid grid-flow-row grid-cols-1 md:grid-cols-2 place-items-center gap-5">
+      <div tw="px-5 grid grid-flow-row grid-cols-1 md:grid-cols-2 place-items-center">
         <div tw="w-full">
           <h4 tw="pb-3 text-3xl font-bold text-navy-blue">
             20% Discount Of All Products
@@ -70,7 +70,7 @@ const DiscountItem = () => {
         </div>
         <div>
           <img
-            src="/assets/TrendingProduct.png"
+            src="/assets/image_33.png"
             width="100%"
             height="auto"
             style={{ maxWidth: 500 }}
