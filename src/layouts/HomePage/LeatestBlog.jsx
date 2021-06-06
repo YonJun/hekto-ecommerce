@@ -4,12 +4,10 @@ import { Subtitle } from "../../components/HomePage/Typography";
 
 const Card = () => {
   return (
-    <div
-      tw="w-full rounded-xl bg-white overflow-auto shadow-sm"
-      style={{ maxWidth: 350 }}>
+    <div tw="w-full rounded-lg bg-white overflow-auto shadow-md">
       <img
         src="https://sodimac.decolovers.cl/blog/wp-content/uploads/2020/08/900-seccional-nube_3430987.jpg"
-        tw="w-full h-auto block rounded-xl"
+        tw="w-full h-auto block rounded-lg"
       />
       <div tw="p-5 text-navy-blue">
         <div tw="pb-5">
@@ -26,13 +24,17 @@ const Card = () => {
           </p>
         </div>
         <div tw="space-y-3">
-          <h6 tw="font-bold text-lg">Top esssential Trends in 2021</h6>
-          <p tw="text-gray-500">
+          <h6 tw="font-bold text-lg">
+            <a href="#" tw="hover:text-my-pink">
+              Top esssential Trends in 2021
+            </a>
+          </h6>
+          <p tw="text-gray-500 text-sm">
             More off this less hello samlande lied much over tightly circa horse
             taped mightly
           </p>
           <p>
-            <a href="#" tw="underline">
+            <a href="#" tw="underline hover:text-my-pink">
               Read More
             </a>
           </p>
@@ -45,7 +47,11 @@ const LeatestBlog = () => {
   return (
     <>
       <Subtitle tw="mb-10">Leatest Blog</Subtitle>
-      <Card />
+      <div tw="grid grid-flow-row place-items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-10 ">
+        <Card />
+        <Card />
+        <Card />
+      </div>
     </>
   );
 };
