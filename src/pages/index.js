@@ -6,6 +6,7 @@ import Carousel from "../layouts/HomePage/Carousel";
 import DiscountItem from "../layouts/HomePage/DiscountItem";
 import FreaturedProducts from "../layouts/HomePage/FeaturedProducts";
 import LatestTrendingProducts from "../layouts/HomePage/LatestTrendingProducts";
+import LeatestBlog from "../layouts/HomePage/LeatestBlog";
 import LeatestProducts from "../layouts/HomePage/LeatestProducts";
 import ShopexOffer from "../layouts/HomePage/ShopexOffer";
 import TopCategories from "../layouts/HomePage/TopCategories";
@@ -76,6 +77,11 @@ export default function Home() {
           </Container>
         </div>
       </BackgroundRectangle>
+      <Container maxW="container.lg">
+        <div tw="py-10">
+          <LeatestBlog />
+        </div>
+      </Container>
     </>
   );
 }

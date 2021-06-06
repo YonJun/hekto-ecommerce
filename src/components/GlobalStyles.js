@@ -21,6 +21,7 @@ const CustomStyles = createGlobalStyle`
     -webkit-tap-highlight-color: ${theme`colors.purple.500`};
     font-family: 'Josefin Sans', sans-serif;    
     ${tw`antialiased`}
+    background-color: #FEFEFE;
    }
 
   button{    

@@ -9,6 +9,7 @@ const customTheme = extendTheme({
     global: {
       body: {
         fontFamily: null,
+        bg: null,
       },
     },
   },
