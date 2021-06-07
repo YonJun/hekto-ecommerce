@@ -33,6 +33,10 @@ const CustomStyles = createGlobalStyle`
 
   }
 
+  .text-sub-color{
+    color:#8A8FB9;
+  }
+
 `;
 
 const GlobalStyles = () => (
