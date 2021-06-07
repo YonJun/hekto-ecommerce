@@ -47,10 +47,10 @@ const LeatestBlog = () => {
   return (
     <>
       <Subtitle tw="mb-10">Leatest Blog</Subtitle>
-      <div tw="grid grid-flow-row place-items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-10 ">
-        <Card />
-        <Card />
-        <Card />
+      <div tw="grid grid-flow-row place-items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-7 ">
+        <Card key="1" />
+        <Card key="2" />
+        <Card key="3" />
       </div>
     </>
   );
