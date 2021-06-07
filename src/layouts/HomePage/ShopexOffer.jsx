@@ -3,10 +3,10 @@ import { Subtitle } from "../../components/HomePage/Typography";
 
 const Card = ({ img, title, description }) => {
   return (
-    <div tw="p-5 shadow-lg bg-white text-center flex flex-col justify-center items-center">
+    <div tw="p-5 shadow-lg bg-white text-center flex flex-col justify-center items-center py-10 space-y-5">
       <img src={img} tw="block w-16 h-auto" />
       <h5 tw="text-xl font-bold text-navy-blue">{title}</h5>
-      <p>{description}</p>
+      <p tw="text-gray-400">{description}</p>
     </div>
   );
 };
