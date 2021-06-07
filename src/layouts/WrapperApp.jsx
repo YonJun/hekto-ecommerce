@@ -72,7 +72,7 @@ const WrapperApp = ({ children }) => {
               <li>
                 <button>
                   <span>Login</span>
-                  <span tw="md:pl-1 lg:pl-2 text-xs">
+                  <span tw="pl-1 lg:pl-2 text-xs">
                     <FontAwesomeIcon icon={["far", "user"]} />
                   </span>
                 </button>
@@ -80,7 +80,7 @@ const WrapperApp = ({ children }) => {
               <li>
                 <button>
                   <span>Wishlist</span>
-                  <span tw="md:pl-1 lg:pl-2 text-xs">
+                  <span tw="pl-1 lg:pl-2 text-xs">
                     <FontAwesomeIcon icon={["far", "heart"]} />
                   </span>
                 </button>
