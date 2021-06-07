@@ -149,7 +149,7 @@ const WrapperApp = ({ children }) => {
           <Container maxW="container.xl">
             <div tw="py-24">
               <div tw="flex flex-wrap md:text-left text-center order-first">
-                <div tw="lg:w-2/5 md:w-1/2 w-full px-4">
+                <div tw="lg:w-2/5 md:w-1/2 w-full px-4 mb-5 md:mb-0">
                   <div tw="mb-5">
                     <a
                       tw="text-2xl font-extrabold text-gray-800 dark:text-white lg:text-3xl hover:text-gray-700 dark:hover:text-gray-300  "
@@ -177,13 +177,13 @@ const WrapperApp = ({ children }) => {
                   </p>
                 </div>
 
-                <div tw="lg:w-1/5 md:w-1/2 w-full px-4">
-                  <h2 tw="font-bold text-black capitalize text-lg mb-7">
+                <div tw="lg:w-1/5 md:w-1/2 w-full px-4 mb-10 lg:mb-0">
+                  <h2 tw="font-bold text-black capitalize text-lg mb-2 md:mb-7">
                     Categories
                   </h2>
                   <nav
                     className="text-sub-color"
-                    tw="font-normal list-none space-y-3 mb-5 lg:mb-0">
+                    tw="font-normal list-none space-y-3">
                     {[
                       "Laptops & Computers",
                       "Cameras & Photography",
@@ -197,13 +197,13 @@ const WrapperApp = ({ children }) => {
                     ))}
                   </nav>
                 </div>
-                <div tw="lg:w-1/5 md:w-1/2 w-full px-4">
-                  <h2 tw="font-bold text-black capitalize text-lg mb-7">
+                <div tw="lg:w-1/5 md:w-1/2 w-full px-4 mb-10 lg:mb-0">
+                  <h2 tw="font-bold text-black capitalize text-lg mb-2 md:mb-7">
                     Customer Care
                   </h2>
                   <nav
                     className="text-sub-color"
-                    tw="font-normal list-none space-y-3 mb-5 lg:mb-0">
+                    tw="font-normal list-none space-y-3">
                     {[
                       "My Account",
                       "Discount",
@@ -217,13 +217,13 @@ const WrapperApp = ({ children }) => {
                     ))}
                   </nav>
                 </div>
-                <div tw="lg:w-1/5 md:w-1/2 w-full px-4">
-                  <h2 tw="font-bold text-black capitalize text-lg mb-7">
+                <div tw="lg:w-1/5 md:w-1/2 w-full px-4 mb-10 lg:mb-0">
+                  <h2 tw="font-bold text-black capitalize text-lg mb-2 md:mb-7">
                     Pages
                   </h2>
                   <nav
                     className="text-sub-color"
-                    tw="font-normal list-none space-y-3 mb-5 lg:mb-0">
+                    tw="font-normal list-none space-y-3">
                     {[
                       "Blog",
                       "Browse the Shop",
