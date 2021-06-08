@@ -50,7 +50,7 @@ const ListLink = () => (
         tw="w-full lg:w-72 p-1 pl-2 pr-10 text-gray-700 bg-white border border-gray-300 rounded dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"
         placeholder="Search..."
       />
-      <button tw="bg-my-pink absolute inset-y-0 right-0 flex items-center p-2 rounded-r">
+      <button tw="bg-my-pink absolute inset-y-0 right-0 flex items-center p-2 rounded-r hover:bg-pink-600">
         <svg tw="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none">
           <path
             d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z"
