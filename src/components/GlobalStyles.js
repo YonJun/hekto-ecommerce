@@ -27,11 +27,16 @@ body {
 
   .btn{
     ${tw`px-4 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-blue-600 rounded-md dark:bg-gray-800 hover:bg-blue-500 dark:hover:bg-gray-700 focus:outline-none focus:bg-blue-500 dark:focus:bg-gray-700`}
-
+    
   }
-
+  
   .text-sub-color{
     color:#8A8FB9;
+  }
+  
+  .active{
+    ${tw`text-my-pink`}
+    
   }
 
 `;

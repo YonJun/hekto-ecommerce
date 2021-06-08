@@ -13,13 +13,18 @@ import {
 } from "@chakra-ui/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Button } from "../components/Button";
+import Link from "../components/Link";
 
 const ListLink = () => (
   <>
     <ul tw="flex  flex-col py-3 text-sm  md:(flex-row items-center space-x-7 mx-0 py-0)">
       <li className="group" tw="relative">
-        <span>Home</span>
-        <FontAwesomeIcon tw="ml-1" icon={["fas", "angle-down"]} />
+        <Link activeClassName="active" href="/">
+          <a>
+            Home
+            <FontAwesomeIcon tw="ml-1" icon={["fas", "angle-down"]} />
+          </a>
+        </Link>
         <div tw="hidden divide-y-2 divide-gray-200 relative md:absolute bg-white text-navy-blue text-sm z-10 md:(w-max shadow-xl  border border-gray-200 rounded-b-lg)   group-hover:block">
           <a tw="px-5 py-1 block" href="#">
             Link 1
