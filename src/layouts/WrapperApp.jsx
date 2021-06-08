@@ -16,21 +16,33 @@ import { Button } from "../components/Button";
 
 const ListLink = () => (
   <>
-    <div tw="flex flex-col py-3 md:(flex-row space-x-7 mx-0 py-0)">
-      {["Home", "Pages", "Products", "Blog", "Shop", "Contact"].map(
-        (label, index) => (
-          <a
-            key={label}
-            href="#"
-            css={[
-              tw`py-1 text-sm  transition-colors duration-200 transform  dark:text-gray-200  hover:text-my-pink md:mx-2`,
-              index === 0 && tw`text-my-pink`,
-            ]}>
-            {label}
+    <ul tw="flex  flex-col py-3 text-sm  md:(flex-row items-center space-x-7 mx-0 py-0)">
+      <li className="group" tw="relative">
+        <span>Home</span>
+        <FontAwesomeIcon tw="ml-1" icon={["fas", "angle-down"]} />
+        <div tw="hidden divide-y-2 divide-gray-200 relative md:absolute bg-white text-navy-blue text-sm z-10 md:(w-max shadow-xl  border border-gray-200 rounded-b-lg)   group-hover:block">
+          <a tw="px-5 py-1 block" href="#">
+            Link 1
           </a>
-        ),
-      )}
-    </div>
+
+          <a tw="px-5 py-1 block" href="#">
+            Link 2
+          </a>
+          <a tw="px-5 py-1 block" href="#">
+            Link 3
+          </a>
+        </div>
+      </li>
+      {["Pages", "Products", "Blog", "Shop", "Contact"].map((label, index) => (
+        <li
+          key={label}
+          css={[
+            tw`py-1 transition-colors duration-200 transform  dark:text-gray-200  hover:text-my-pink md:mx-2`,
+          ]}>
+          <a href="#">{label}</a>
+        </li>
+      ))}
+    </ul>
 
     <div tw="relative ">
       <input
@@ -67,8 +79,42 @@ const WrapperApp = ({ children }) => {
               <p tw="inline-block ml-5">(12345)67890</p>
             </div>
             <ul tw="flex list-none space-x-5">
-              <li>English</li>
-              <li>USD</li>
+              <li className="group" tw="relative">
+                <p tw="inline-block align-top">English</p>
+                <span tw="ml-1">
+                  <FontAwesomeIcon icon={["fas", "angle-down"]} />
+                </span>
+                <div tw="hidden divide-y-2 divide-gray-200 absolute bg-white text-navy-blue text-sm z-10 w-max shadow-xl border border-gray-200 rounded-b-lg group-hover:block">
+                  <a tw="align-middle px-5 py-1 block" href="#">
+                    Link 1
+                  </a>
+
+                  <a tw="align-middle px-5 py-1 block" href="#">
+                    Link 2
+                  </a>
+                  <a tw="align-middle px-5 py-1 block" href="#">
+                    Link 3
+                  </a>
+                </div>
+              </li>
+              <li className="group" tw="relative">
+                <p tw="inline-block align-top">USD</p>
+                <span tw="ml-1">
+                  <FontAwesomeIcon icon={["fas", "angle-down"]} />
+                </span>
+                <div tw="hidden divide-y-2 divide-gray-200 absolute bg-white text-navy-blue text-sm z-10 w-max shadow-xl border border-gray-200 rounded-b-lg group-hover:block">
+                  <a tw="align-middle px-5 py-1 block" href="#">
+                    Link 1
+                  </a>
+
+                  <a tw="align-middle px-5 py-1 block" href="#">
+                    Link 2
+                  </a>
+                  <a tw="align-middle px-5 py-1 block" href="#">
+                    Link 3
+                  </a>
+                </div>
+              </li>
               <li>
                 <button>
                   <span>Login</span>

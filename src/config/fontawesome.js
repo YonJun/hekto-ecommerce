@@ -5,6 +5,7 @@ import {
   faSearchPlus,
   faCheck,
   faPenFancy,
+  faAngleDown,
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faHeart,
@@ -14,6 +15,7 @@ import {
 import { faFacebook } from "@fortawesome/free-brands-svg-icons";
 
 library.add(
+  faAngleDown,
   faPenFancy,
   faCalendarAlt,
   faCheck,
