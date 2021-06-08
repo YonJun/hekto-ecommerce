@@ -6,15 +6,19 @@ import {
   faCheck,
   faPenFancy,
   faAngleDown,
+  faPhone,
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faHeart,
   faUser,
   faCalendarAlt,
+  faEnvelope,
 } from "@fortawesome/free-regular-svg-icons";
 import { faFacebook } from "@fortawesome/free-brands-svg-icons";
 
 library.add(
+  faPhone,
+  faEnvelope,
   faAngleDown,
   faPenFancy,
   faCalendarAlt,

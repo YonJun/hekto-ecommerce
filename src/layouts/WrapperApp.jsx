@@ -75,8 +75,18 @@ const WrapperApp = ({ children }) => {
             maxW="container.lg"
             tw="flex py-2 text-sm justify-center md:justify-between">
             <div tw="text-left hidden md:block">
-              <p tw="inline-block">demo@gmail.com</p>
-              <p tw="inline-block ml-5">(12345)67890</p>
+              <p tw="inline-block">
+                <span tw="mr-2">
+                  <FontAwesomeIcon icon={["far", "envelope"]} />
+                </span>
+                demo@gmail.com
+              </p>
+              <p tw="inline-block ml-5">
+                <span tw="mr-2">
+                  <FontAwesomeIcon icon={["fas", "phone"]} />
+                </span>
+                (12345)67890
+              </p>
             </div>
             <ul tw="flex list-none space-x-5">
               <li className="group" tw="relative">
