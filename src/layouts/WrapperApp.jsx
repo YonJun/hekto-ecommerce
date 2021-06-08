@@ -26,14 +26,14 @@ const ListLink = () => (
           </a>
         </Link>
         <div tw="hidden divide-y-2 divide-gray-200 relative md:absolute bg-white text-navy-blue text-sm z-10 md:(w-max shadow-xl  border border-gray-200 rounded-b-lg)   group-hover:block">
-          <a tw="px-5 py-1 block" href="#">
+          <a tw="hover:text-my-pink px-5 py-1 block" href="#">
             Link 1
           </a>
 
-          <a tw="px-5 py-1 block" href="#">
+          <a tw="hover:text-my-pink px-5 py-1 block" href="#">
             Link 2
           </a>
-          <a tw="px-5 py-1 block" href="#">
+          <a tw="hover:text-my-pink px-5 py-1 block" href="#">
             Link 3
           </a>
         </div>
@@ -100,14 +100,14 @@ const WrapperApp = ({ children }) => {
                   <FontAwesomeIcon icon={["fas", "angle-down"]} />
                 </span>
                 <div tw="hidden divide-y-2 divide-gray-200 absolute bg-white text-navy-blue text-sm z-10 w-max shadow-xl border border-gray-200 rounded-b-lg group-hover:block">
-                  <a tw="align-middle px-5 py-1 block" href="#">
+                  <a tw="hover:text-my-pink px-5 py-1 block" href="#">
                     Link 1
                   </a>
 
-                  <a tw="align-middle px-5 py-1 block" href="#">
+                  <a tw="hover:text-my-pink px-5 py-1 block" href="#">
                     Link 2
                   </a>
-                  <a tw="align-middle px-5 py-1 block" href="#">
+                  <a tw="hover:text-my-pink px-5 py-1 block" href="#">
                     Link 3
                   </a>
                 </div>
@@ -118,14 +118,14 @@ const WrapperApp = ({ children }) => {
                   <FontAwesomeIcon icon={["fas", "angle-down"]} />
                 </span>
                 <div tw="hidden divide-y-2 divide-gray-200 absolute bg-white text-navy-blue text-sm z-10 w-max shadow-xl border border-gray-200 rounded-b-lg group-hover:block">
-                  <a tw="align-middle px-5 py-1 block" href="#">
+                  <a tw="hover:text-my-pink px-5 py-1 block" href="#">
                     Link 1
                   </a>
 
-                  <a tw="align-middle px-5 py-1 block" href="#">
+                  <a tw="hover:text-my-pink px-5 py-1 block" href="#">
                     Link 2
                   </a>
-                  <a tw="align-middle px-5 py-1 block" href="#">
+                  <a tw="hover:text-my-pink px-5 py-1 block" href="#">
                     Link 3
                   </a>
                 </div>
