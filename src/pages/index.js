@@ -44,9 +44,6 @@ export default function Home() {
         <div tw="py-5">
           <ShopexOffer />
         </div>
-        <div tw="py-5">
-          <TrendingProducts />
-        </div>
       </Container>
       <CustomBgWrapper tw="my-24">
         <Container maxW="container.lg">

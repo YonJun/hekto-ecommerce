@@ -1,6 +1,8 @@
 import { Button } from "@chakra-ui/button";
+import { useTranslation } from "react-i18next";
 import tw, { theme } from "twin.macro";
 const LatestTrendingProducts = () => {
+  const { t } = useTranslation();
   return (
     <>
       <div tw="px-5 grid grid-flow-row grid-cols-1 md:grid-cols-2 place-items-center gap-10">
@@ -15,7 +17,7 @@ const LatestTrendingProducts = () => {
         </div>
         <div tw="w-full">
           <h4 tw="text-3xl font-bold text-navy-blue">
-            Unique Features Of leatest & Trending Poducts
+            Unique Features Of leatest & Trending Products
           </h4>
           <ul tw="list-none py-6 space-y-2 text-gray-400">
             <li tw="flex flex-wrap">
@@ -44,7 +46,7 @@ const LatestTrendingProducts = () => {
               borderRadius="1"
               paddingInline={10}
               backgroundColor={theme`colors[my-pink]`}>
-              Add To Cart
+              {t("common.addToCart")}
             </Button>
 
             <div tw="text-my-blue">
