@@ -1,5 +1,6 @@
 import tw, { styled, css } from "twin.macro";
 import { Container } from "@chakra-ui/layout";
+
 import { useRef, useState } from "react";
 import {
   Drawer,
@@ -14,6 +15,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Button } from "../components/Button";
 import Link from "../components/Link";
+import { useTranslation } from "react-i18next";
 
 const ListLink = () => (
   <>
@@ -72,6 +74,9 @@ const ListLink = () => (
 const WrapperApp = ({ children }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = useRef();
+
+  const { i18n, t } = useTranslation();
+
   return (
     <>
       <nav tw="bg-white shadow dark:bg-gray-800">
@@ -113,21 +118,25 @@ const WrapperApp = ({ children }) => {
                 </div>
               </li>
               <li className="group" tw="relative">
-                <p tw="inline-block align-top">USD</p>
+                <p tw="inline-block align-top">{t("common.hello_word")}</p>
                 <span tw="ml-1">
                   <FontAwesomeIcon icon={["fas", "angle-down"]} />
                 </span>
                 <div tw="hidden divide-y-2 divide-gray-200 absolute bg-white text-navy-blue text-sm z-10 w-max shadow-xl border border-gray-200 rounded-b-lg group-hover:block">
-                  <a tw="hover:text-my-pink px-5 py-1 block" href="#">
-                    Link 1
-                  </a>
-
-                  <a tw="hover:text-my-pink px-5 py-1 block" href="#">
-                    Link 2
-                  </a>
-                  <a tw="hover:text-my-pink px-5 py-1 block" href="#">
-                    Link 3
-                  </a>
+                  <p
+                    tw="hover:(text-my-pink cursor-pointer) px-5 py-1 block"
+                    onClick={() => {
+                      i18n.changeLanguage("en");
+                    }}>
+                    English
+                  </p>
+                  <p
+                    tw="hover:(text-my-pink cursor-pointer) px-5 py-1 block"
+                    onClick={() => {
+                      i18n.changeLanguage("es");
+                    }}>
+                    Español
+                  </p>
                 </div>
               </li>
               <li>
