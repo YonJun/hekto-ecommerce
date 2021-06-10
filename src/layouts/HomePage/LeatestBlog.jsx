@@ -1,8 +1,11 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useTranslation } from "react-i18next";
 import tw from "twin.macro";
 import { Subtitle } from "../../components/HomePage/Typography";
 
 const Card = () => {
+  const { t } = useTranslation();
+
   return (
     <div tw="w-full rounded-lg bg-white overflow-auto shadow-md">
       <img
@@ -35,7 +38,7 @@ const Card = () => {
           </p>
           <p>
             <a href="#" tw="underline hover:text-my-pink">
-              Read More
+              {t("common.readMore")}
             </a>
           </p>
         </div>
@@ -44,9 +47,10 @@ const Card = () => {
   );
 };
 const LeatestBlog = () => {
+  const { t } = useTranslation();
   return (
     <>
-      <Subtitle tw="mb-10">Leatest Blog</Subtitle>
+      <Subtitle tw="mb-10">{t("pages.home.featureText_7")}</Subtitle>
       <div tw="grid grid-flow-row place-items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-7 ">
         <Card key="1" />
         <Card key="2" />
