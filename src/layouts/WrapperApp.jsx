@@ -17,59 +17,67 @@ import { Button } from "../components/Button";
 import Link from "../components/Link";
 import { useTranslation } from "react-i18next";
 
-const ListLink = () => (
-  <>
-    <ul tw="flex  flex-col py-3 text-sm  md:(flex-row items-center space-x-7 mx-0 py-0)">
-      <li className="group" tw="relative">
-        <Link activeClassName="active" href="/">
-          <a>
-            Home
-            <FontAwesomeIcon tw="ml-1" icon={["fas", "angle-down"]} />
-          </a>
-        </Link>
-        <div tw="hidden divide-y-2 divide-gray-200 relative md:absolute bg-white text-navy-blue text-sm z-10 md:(w-max shadow-xl  border border-gray-200 rounded-b-lg)   group-hover:block">
-          <a tw="hover:text-my-pink px-5 py-1 block" href="#">
-            Link 1
-          </a>
+const ListLink = () => {
+  const { t } = useTranslation();
+  return (
+    <>
+      <ul tw="flex  flex-col py-3 text-sm  md:(flex-row items-center space-x-7 mx-0 py-0)">
+        <li className="group" tw="relative">
+          <Link activeClassName="active" href="/">
+            <a>
+              {t("header.home")}
+              <FontAwesomeIcon tw="ml-1" icon={["fas", "angle-down"]} />
+            </a>
+          </Link>
+          <div tw="hidden divide-y-2 divide-gray-200 relative md:absolute bg-white text-navy-blue text-sm z-10 md:(w-max shadow-xl  border border-gray-200 rounded-b-lg)   group-hover:block">
+            <a tw="hover:text-my-pink px-5 py-1 block" href="#">
+              Link 1
+            </a>
 
-          <a tw="hover:text-my-pink px-5 py-1 block" href="#">
-            Link 2
-          </a>
-          <a tw="hover:text-my-pink px-5 py-1 block" href="#">
-            Link 3
-          </a>
-        </div>
-      </li>
-      {["Pages", "Products", "Blog", "Shop", "Contact"].map((label, index) => (
-        <li
-          key={label}
-          css={[
-            tw`py-1 transition-colors duration-200 transform  dark:text-gray-200  hover:text-my-pink md:mx-2`,
-          ]}>
-          <a href="#">{label}</a>
+            <a tw="hover:text-my-pink px-5 py-1 block" href="#">
+              Link 2
+            </a>
+            <a tw="hover:text-my-pink px-5 py-1 block" href="#">
+              Link 3
+            </a>
+          </div>
         </li>
-      ))}
-    </ul>
+        {[
+          t("header.pages"),
+          t("header.products"),
+          t("header.blog"),
+          t("header.shop"),
+          t("header.contact"),
+        ].map((label, index) => (
+          <li
+            key={index}
+            css={[
+              tw`py-1 transition-colors duration-200 transform  dark:text-gray-200  hover:text-my-pink md:mx-2`,
+            ]}>
+            <a href="#">{label}</a>
+          </li>
+        ))}
+      </ul>
 
-    <div tw="relative ">
-      <input
-        type="text"
-        tw="w-full lg:w-72 p-1 pl-2 pr-10 text-gray-700 bg-white border border-gray-300 rounded dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"
-        placeholder="Search..."
-      />
-      <button tw="bg-my-pink absolute inset-y-0 right-0 flex items-center p-2 rounded-r hover:bg-pink-600">
-        <svg tw="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none">
-          <path
-            d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"></path>
-        </svg>
-      </button>
-    </div>
-  </>
-);
+      <div tw="relative ">
+        <input
+          type="text"
+          tw="w-full lg:w-72 p-1 pl-2 pr-10 text-gray-700 bg-white border border-gray-300 rounded dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"
+        />
+        <button tw="bg-my-pink absolute inset-y-0 right-0 flex items-center p-2 rounded-r hover:bg-pink-600">
+          <svg tw="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none">
+            <path
+              d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"></path>
+          </svg>
+        </button>
+      </div>
+    </>
+  );
+};
 
 const WrapperApp = ({ children }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -201,13 +209,9 @@ const WrapperApp = ({ children }) => {
             <DrawerOverlay />
             <DrawerContent>
               <DrawerCloseButton />
-              <DrawerHeader>Create your account</DrawerHeader>
-
               <DrawerBody>
                 <ListLink />
               </DrawerBody>
-
-              <DrawerFooter>footer</DrawerFooter>
             </DrawerContent>
           </Drawer>
         </Container>
