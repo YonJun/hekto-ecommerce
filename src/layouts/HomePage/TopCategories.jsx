@@ -1,5 +1,6 @@
 import { useKeenSlider } from "keen-slider/react";
 import { useEffect, useMemo, useRef, useState } from "react";
+import { useTranslation } from "react-i18next";
 import tw, { styled, theme } from "twin.macro";
 import { Button } from "../../components/Button";
 import { Subtitle } from "../../components/HomePage/Typography";
@@ -130,6 +131,7 @@ const ImgWrapper = styled.div`
 `;
 
 const Card = () => {
+  const { t } = useTranslation();
   return (
     <div tw="flex flex-col items-center">
       <ImgWrapper className="group" tw="relative">
@@ -142,7 +144,7 @@ const Card = () => {
         />
         <div tw="absolute left-0 bottom-5 w-full flex justify-center invisible group-hover:visible">
           <Button size="xs" color="secondary">
-            View Shop
+            {t("common.viewShop")}
           </Button>
         </div>
       </ImgWrapper>
@@ -155,9 +157,10 @@ const Card = () => {
 };
 
 const TopCategories = () => {
+  const { t } = useTranslation();
   return (
     <>
-      <Subtitle>Top Categories</Subtitle>
+      <Subtitle>{t("pages.home.featureText_5")}</Subtitle>
 
       <SliderWrapper>
         {[...Array(12).keys()].map((idx) => (

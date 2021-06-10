@@ -1,4 +1,5 @@
 import { Container } from "@chakra-ui/layout";
+import { useTranslation } from "react-i18next";
 import tw, { styled } from "twin.macro";
 import { Button } from "../components/Button";
 import { Subtitle } from "../components/HomePage/Typography";
@@ -29,6 +30,7 @@ const CustomBgWrapper = styled.div`
   background-color: #f2f0ff;
 `;
 export default function Home() {
+  const { t } = useTranslation();
   return (
     <>
       <CustomBgWrapper>
@@ -67,10 +69,8 @@ export default function Home() {
         <img src="/assets/bg_rectangle.png" />
         <div className="content">
           <Container maxW="container.sm" tw="flex flex-col items-center">
-            <Subtitle tw="mb-5">
-              Get Leatest Update By Subscribe 0ur Newslater
-            </Subtitle>
-            <Button>Shop Now</Button>
+            <Subtitle tw="mb-5">{t("pages.home.featureText_6")}</Subtitle>
+            <Button>{t("common.shopNow")}</Button>
           </Container>
         </div>
       </BackgroundRectangle>
