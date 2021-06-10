@@ -1,8 +1,62 @@
 {
-
- "common": {
-   "hello_word": "Hola mundo"
-
- }
-
+  "common": {
+    "language": "Idioma",
+    "login": "Iniciar sesión",
+    "signUp": "Registrarse",
+    "wishlist": "Favoritos",
+    "shopNow": "Comprar ahora",
+    "viewDetails": "Ver Detalles",
+    "viewShop": "Ver Tienda",
+    "sale": "Vendido",
+    "offInAllProducts": "de descuento en todos los productos",
+    "viewCollection": "Ver colección",
+    "discountOfAllProducts": "Descuento de todos los productos",
+    "readMore": "Lee mas"
+  },
+  "pages": {
+    "home": {
+      "featureText_1": "Productos Destacados",
+      "featureText_2": "¡Qué oferta de Shopex!",
+      "featureText_3": "Productos de tendencia",
+      "featureText_4": "Artículo de descuento",
+      "featureText_5": "Categorías principales",
+      "featureText_6": "Obtenga la actualización de Leatest por suscribirse a nuestro Newslater",
+      "featureText_7": "Blog líder",
+      "newArrival": "Nueva llegada",
+      "bestSeller": "Mejor vendido",
+      "featured": "Presentado",
+      "specialOffer": "Oferta especial"
+    }
+  },
+  "header": {
+    "home": "Inicio",
+    "pages": "Paginas",
+    "products": "Productos",
+    "blog": "Blog",
+    "shop": "Tienda",
+    "contact": "Contacto"
+  },
+  "footer": {
+    "allRightsReserved": "Reservados todos los derechos",
+    "contactInfo": "Datos de contacto",
+    "catagories": "Categorías",
+    "customerCare": "Atención al cliente",
+    "pages": "Paginas",
+    "laptops&Computers": "Computadoras y laptops",
+    "cameras&Photography": "Cámaras y Fotografía",
+    "smartPhones&Tablets": "Teléfonos inteligentes y tabletas",
+    "videoGames&Consoles": "Videojuegos y consolas",
+    "waterproofHeadphones": "Auriculares impermeables",
+    "myAccount": "Mi cuenta",
+    "discount": "Descuento",
+    "returns": "Devoluciones",
+    "ordersHistory": "Historial de pedidos",
+    "orderTracking": "Rastreo de orden",
+    "blog": "Blog",
+    "browsetheShop": "Navegar por la tienda",
+    "category": "Categoría",
+    "pre-Builtpages": "Páginas prediseñadas",
+    "visualComposerElements": "Elementos de Visual Composer",
+    "woocommercepages": "Páginas de WooCommerce"
+  }
 }

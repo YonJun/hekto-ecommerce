@@ -100,25 +100,7 @@ const WrapperApp = ({ children }) => {
             </div>
             <ul tw="flex list-none space-x-5">
               <li className="group" tw="relative">
-                <p tw="inline-block align-top">English</p>
-                <span tw="ml-1">
-                  <FontAwesomeIcon icon={["fas", "angle-down"]} />
-                </span>
-                <div tw="hidden divide-y-2 divide-gray-200 absolute bg-white text-navy-blue text-sm z-10 w-max shadow-xl border border-gray-200 rounded-b-lg group-hover:block">
-                  <a tw="hover:text-my-pink px-5 py-1 block" href="#">
-                    Link 1
-                  </a>
-
-                  <a tw="hover:text-my-pink px-5 py-1 block" href="#">
-                    Link 2
-                  </a>
-                  <a tw="hover:text-my-pink px-5 py-1 block" href="#">
-                    Link 3
-                  </a>
-                </div>
-              </li>
-              <li className="group" tw="relative">
-                <p tw="inline-block align-top">{t("common.hello_word")}</p>
+                <p tw="inline-block">{t("common.language")}</p>
                 <span tw="ml-1">
                   <FontAwesomeIcon icon={["fas", "angle-down"]} />
                 </span>
@@ -137,6 +119,24 @@ const WrapperApp = ({ children }) => {
                     }}>
                     Español
                   </p>
+                </div>
+              </li>
+              <li className="group" tw="relative">
+                <p tw="inline-block align-top">USD</p>
+                <span tw="ml-1">
+                  <FontAwesomeIcon icon={["fas", "angle-down"]} />
+                </span>
+                <div tw="hidden divide-y-2 divide-gray-200 absolute bg-white text-navy-blue text-sm z-10 w-max shadow-xl border border-gray-200 rounded-b-lg group-hover:block">
+                  <a tw="hover:text-my-pink px-5 py-1 block" href="#">
+                    Link 1
+                  </a>
+
+                  <a tw="hover:text-my-pink px-5 py-1 block" href="#">
+                    Link 2
+                  </a>
+                  <a tw="hover:text-my-pink px-5 py-1 block" href="#">
+                    Link 3
+                  </a>
                 </div>
               </li>
               <li>

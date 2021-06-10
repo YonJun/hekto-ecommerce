@@ -1,8 +1,62 @@
 {
-
- "common": {
-   "hello_word": "Hello Word"
-
- }
-
+  "common": {
+    "language": "Language",
+    "login": "Login",
+    "signUp": "Sign Up",
+    "wishlist": "Wishlist",
+    "shopNow": "Shop Now",
+    "viewDetails": "View Details",
+    "viewShop": "View Shop",
+    "sale": "Sale",
+    "offInAllProducts": "off in all products",
+    "viewCollection": "View Collection",
+    "discountOfAllProducts": "Discount Of All Products",
+    "readMore": "Read More"
+  },
+  "pages": {
+    "home": {
+      "featureText_1": "Featured Products",
+      "featureText_2": "What Shopex Offer!",
+      "featureText_3": "Trending Products",
+      "featureText_4": "Discount Item",
+      "featureText_5": "Top Categories",
+      "featureText_6": "Get Leatest Update By Subscribe 0ur Newslater",
+      "featureText_7": "Leatest Blog",
+      "newArrival": "New Arrival",
+      "bestSeller": "Best Seller",
+      "featured": "Featured",
+      "specialOffer": "Special Offer"
+    }
+  },
+  "header": {
+    "home": "Home",
+    "pages": "Pages",
+    "products": "Products",
+    "blog": "Blog",
+    "shop": "Shop",
+    "contact": "Contact"
+  },
+  "footer": {
+    "allRightsReserved": "All Rights Reserved",
+    "contactInfo": "Contact Info",
+    "catagories": "Catagories",
+    "customerCare": "Customer Care",
+    "pages": "Pages",
+    "laptops&Computers": "Laptops & Computers",
+    "cameras&Photography": "Cameras & Photography",
+    "smartPhones&Tablets": "Smart Phones & Tablets",
+    "videoGames&Consoles": "Video Games & Consoles",
+    "waterproofHeadphones": "Waterproof Headphones",
+    "myAccount": "My Account",
+    "discount": "Discount",
+    "returns": "Returns",
+    "ordersHistory": "Orders History",
+    "orderTracking": "Order Tracking",
+    "blog": "Blog",
+    "browsetheShop": "Browse the Shop",
+    "category": "Category",
+    "pre-Builtpages": "Pre-Built pages",
+    "visualComposerElements": "Visual Composer Elements",
+    "woocommercepages": "WooCommerce pages"
+  }
 }
