@@ -2,11 +2,14 @@ import tw, { theme } from "twin.macro";
 import { Subtitle } from "../../components/HomePage/Typography";
 import { Button } from "@chakra-ui/button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useTranslation } from "react-i18next";
 
 const DiscountItem = () => {
+  const { t } = useTranslation();
+
   return (
     <>
-      <Subtitle tw="pb-5">Discount Item</Subtitle>
+      <Subtitle tw="pb-5">{t("pages.home.featureText_4")}</Subtitle>
       <ul tw="pb-5 text-navy-blue  text-xs md:text-base  flex space-x-5 justify-center list-none">
         <li tw="text-my-pink underline">
           <a href="/#">Wood Chair</a>
@@ -21,7 +24,7 @@ const DiscountItem = () => {
       <div tw="px-5 grid grid-flow-row grid-cols-1 md:grid-cols-2 place-items-center">
         <div tw="w-full">
           <h4 tw="pb-3 text-3xl font-bold text-navy-blue">
-            20% Discount Of All Products
+            {`20% ${t("common.discountOfAllProducts")}`}
           </h4>
           <p tw="pb-3 text-xl text-my-pink">Eams Sofa Compact</p>
           <p tw="text-gray-400 text-sm">
@@ -65,7 +68,7 @@ const DiscountItem = () => {
             borderRadius="1"
             paddingInline={10}
             backgroundColor={theme`colors[my-pink]`}>
-            Shop Now
+            {t("common.shopNow")}
           </Button>
         </div>
         <div>
