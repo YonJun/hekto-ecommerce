@@ -4,6 +4,7 @@ import { useKeenSlider } from "keen-slider/react";
 import { useEffect, useMemo, useRef, useState } from "react";
 import ProductOptions from "../../components/HomePage/ProductOptions";
 import { Subtitle } from "../../components/HomePage/Typography";
+import { useTranslation } from "react-i18next";
 
 const Dots = styled.div`
   ${tw`space-x-2 flex justify-center relative py-3`}
@@ -132,6 +133,9 @@ const LineClampStyle = css`
 `;
 
 const Product = ({ id, img, title, code, price }) => {
+  console.log("render product id", id);
+  const { t } = useTranslation();
+
   return (
     <div className="group" tw="bg-white text-navy-blue shadow-md w-full">
       <div tw="relative py-12 bg-gray-50 group-hover:bg-white">
@@ -150,7 +154,7 @@ const Product = ({ id, img, title, code, price }) => {
             tw="px-4 py-2 text-white rounded"
             style={{ backgroundColor: "#08D15F" }}
             onClick={() => alert(code)}>
-            <span tw="text-sm">View Details</span>
+            <span tw="text-sm">{t("common.viewDetails")}</span>
           </button>
         </div>
       </div>
@@ -172,10 +176,11 @@ const Product = ({ id, img, title, code, price }) => {
 };
 
 const FreaturedProducts = () => {
+  const { t } = useTranslation();
+
   return (
     <>
-      <Subtitle tw="pb-5"> Featured Products</Subtitle>
-
+      <Subtitle tw="pb-5">{t("pages.home.featureText_1")}</Subtitle>
       <SliderWrapper>
         {[...Array(16).keys()].map((idx) => (
           <div key={idx} className="keen-slider__slide" tw="p-1">
