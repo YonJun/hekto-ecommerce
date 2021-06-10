@@ -2,6 +2,7 @@ import tw, { styled, theme } from "twin.macro";
 
 import { Subtitle } from "../../components/HomePage/Typography";
 import ProductOptions from "../../components/HomePage/ProductOptions";
+import { useTranslation } from "react-i18next";
 
 const SaleText = styled.span`
   /* Abs positioning makes it not take up vert space */
@@ -20,6 +21,8 @@ const SaleText = styled.span`
 `;
 
 const Sale = () => {
+  const { t } = useTranslation();
+
   return (
     <div tw="relative inline-block">
       <img
@@ -29,7 +32,7 @@ const Sale = () => {
         style={{ maxWidth: 100 }}
         tw="block mx-auto"
       />
-      <SaleText tw="text-white">Sale</SaleText>
+      <SaleText tw="text-white">{t("common.sale")}</SaleText>
     </div>
   );
 };
@@ -67,22 +70,22 @@ const Product = ({ id, img, title, sale, price, oldPrice }) => {
   );
 };
 const LeatestProducts = () => {
-  console.log("Leatest Products", theme`colors.black`, theme`screens.lg`);
+  const { t } = useTranslation();
   return (
     <>
-      <Subtitle tw="pb-5">Leatest Products</Subtitle>
+      <Subtitle tw="pb-5">{t("pages.home.featureText_8")}</Subtitle>
       <ul tw="pb-5 text-navy-blue  text-xs md:text-xl  flex space-x-5 justify-center list-none">
         <li tw="text-my-pink underline">
-          <a href="/#">New Arrival</a>
+          <a href="/#">{t("pages.home.newArrival")}</a>
         </li>
         <li>
-          <a href="/#">Best Seller</a>
+          <a href="/#">{t("pages.home.bestSeller")}</a>
         </li>
         <li>
-          <a href="/#">Featured</a>
+          <a href="/#">{t("pages.home.featured")}</a>
         </li>
         <li>
-          <a href="/#">Special Offer</a>
+          <a href="/#">{t("pages.home.specialOffer")}</a>
         </li>
       </ul>
       <div tw="grid grid-flow-row grid-cols-1 md:grid-cols-2 lg:grid-cols-3 place-items-center gap-4">
