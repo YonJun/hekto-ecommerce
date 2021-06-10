@@ -3,6 +3,7 @@ import { Container } from "@chakra-ui/layout";
 import { Button } from "@chakra-ui/button";
 import { useKeenSlider } from "keen-slider/react";
 import { useRef, useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 
 const Dots = styled.div`
   ${tw`space-x-2 flex justify-center relative`}
@@ -108,6 +109,7 @@ const Silder = styled.div`
   min-height: 65vh;
 `;
 export default function Carousel() {
+  const { t } = useTranslation();
   return (
     <>
       <SlidersWrapper>
@@ -137,7 +139,7 @@ export default function Carousel() {
                     borderRadius="2px"
                     colorScheme="pink"
                     backgroundColor={theme`colors[my-pink]`}>
-                    Shop Now
+                    {t("common.shopNow")}
                   </Button>
                 </div>
               </div>
