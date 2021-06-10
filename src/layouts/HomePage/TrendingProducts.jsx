@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import tw, { styled } from "twin.macro";
 import { Subtitle } from "../../components/HomePage/Typography";
 
@@ -39,9 +40,11 @@ const OffCardsWrapper = styled.div`
   }
 `;
 const TrendingProducts = () => {
+  const { t } = useTranslation();
+
   return (
     <>
-      <Subtitle tw="pb-5">Trending Products</Subtitle>
+      <Subtitle tw="pb-5">{t("pages.home.featureText_3")}</Subtitle>
       <div tw="pb-10 grid grid-flow-row grid-cols-1 md:grid-cols-2 lg:(grid-cols-4 items-stretch) gap-4">
         {[...Array(4).keys()].map((idx) => (
           <Card key={idx} />
@@ -49,9 +52,9 @@ const TrendingProducts = () => {
       </div>
       <OffCardsWrapper>
         <div className="item_0" tw="w-full p-5 relative flex flex-col">
-          <h5 tw="text-navy-blue">23% off in all products</h5>
+          <h5 tw="text-navy-blue">{`23% ${t("common.offInAllProducts")}`}</h5>
           <a tw="text-my-pink underline" href="/#">
-            Shop Now
+            {t("common.shopNow")}
           </a>
           <div tw="self-end w-full h-40 flex items-center justify-end">
             <img
@@ -62,9 +65,9 @@ const TrendingProducts = () => {
           </div>
         </div>
         <div className="item_1" tw="w-full p-5 relative flex flex-col">
-          <h5 tw="text-navy-blue">23% off in all products</h5>
+          <h5 tw="text-navy-blue">{`23% ${t("common.offInAllProducts")}`}</h5>
           <a tw="text-my-pink underline" href="/#">
-            View Collection
+            {t("common.viewCollection")}
           </a>
           <div tw="self-end w-full h-40 flex items-center justify-end">
             <img
