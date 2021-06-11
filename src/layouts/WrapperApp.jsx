@@ -245,7 +245,7 @@ const WrapperApp = ({ children }) => {
                   <p
                     className="text-sub-color"
                     tw="text-base mt-5 md:text-left text-center">
-                    Contact Info
+                    {t("footer.conctactInfo")}
                     <br />
                     17 Princess Road, London, Greater London NW1 8JR, UK
                   </p>
@@ -253,17 +253,17 @@ const WrapperApp = ({ children }) => {
 
                 <div tw="lg:w-1/5 md:w-1/2 w-full px-4 mb-10 lg:mb-0">
                   <h2 tw="font-bold text-black capitalize text-lg mb-2 md:mb-7">
-                    Categories
+                    {t("footer.categories")}
                   </h2>
                   <nav
                     className="text-sub-color"
                     tw="font-normal list-none space-y-3">
                     {[
-                      "Laptops & Computers",
-                      "Cameras & Photography",
-                      "Smart Phones & Tablets",
-                      "Video Games & Consoles",
-                      "Waterproof Headphones",
+                      t("footer.laptopsAndComputers"),
+                      t("footer.camerasAndPhotography"),
+                      t("footer.smartPhonesAndTablets"),
+                      t("footer.videoGamesAndConsoles"),
+                      t("footer.waterproofHeadphones"),
                     ].map((text, idx) => (
                       <li key={idx}>
                         <a>{text}</a>
@@ -273,17 +273,17 @@ const WrapperApp = ({ children }) => {
                 </div>
                 <div tw="lg:w-1/5 md:w-1/2 w-full px-4 mb-10 lg:mb-0">
                   <h2 tw="font-bold text-black capitalize text-lg mb-2 md:mb-7">
-                    Customer Care
+                    {t("footer.customerCare")}
                   </h2>
                   <nav
                     className="text-sub-color"
                     tw="font-normal list-none space-y-3">
                     {[
-                      "My Account",
-                      "Discount",
-                      "Returns",
-                      "Orders History",
-                      "Order Tracking",
+                      t("footer.myAccount"),
+                      t("footer.discount"),
+                      t("footer.returns"),
+                      t("footer.ordersHistory"),
+                      t("footer.orderTracking"),
                     ].map((text, idx) => (
                       <li key={idx}>
                         <a>{text}</a>
@@ -293,18 +293,18 @@ const WrapperApp = ({ children }) => {
                 </div>
                 <div tw="lg:w-1/5 md:w-1/2 w-full px-4 mb-10 lg:mb-0">
                   <h2 tw="font-bold text-black capitalize text-lg mb-2 md:mb-7">
-                    Pages
+                    {t("footer.pages")}
                   </h2>
                   <nav
                     className="text-sub-color"
                     tw="font-normal list-none space-y-3">
                     {[
-                      "Blog",
-                      "Browse the Shop",
-                      "Category",
-                      "Pre-Built pages",
-                      "Visual Composer Elements",
-                      "WooCommerce pages",
+                      t("footer.blog"),
+                      t("footer.browsetheShop"),
+                      t("footer.category"),
+                      t("footer.preBuiltpages"),
+                      t("footer.visualComposerElements"),
+                      t("footer.woocommercepages"),
                     ].map((text, idx) => (
                       <li key={idx}>
                         <a>{text}</a>
@@ -319,7 +319,9 @@ const WrapperApp = ({ children }) => {
         <div tw="bg-purple-100">
           <Container maxW="container.lg">
             <div tw="py-6 flex items-center sm:flex-row flex-col">
-              <a tw="text-gray-400">©Webecy - All Rights Reserved</a>
+              <a tw="text-gray-400">
+                ©Webecy - {t("footer.allRightsReserved")}
+              </a>
               <span tw="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start space-x-4">
                 <a tw="text-white bg-navy-blue p-2 rounded-full">
                   <svg

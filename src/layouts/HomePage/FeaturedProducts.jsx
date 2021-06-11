@@ -133,7 +133,6 @@ const LineClampStyle = css`
 `;
 
 const Product = ({ id, img, title, code, price }) => {
-  console.log("render product id", id);
   const { t } = useTranslation();
 
   return (

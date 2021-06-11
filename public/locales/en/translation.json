@@ -41,13 +41,13 @@
   "footer": {
     "allRightsReserved": "All Rights Reserved",
     "contactInfo": "Contact Info",
-    "catagories": "Catagories",
+    "categories": "Categories",
     "customerCare": "Customer Care",
     "pages": "Pages",
-    "laptops&Computers": "Laptops & Computers",
-    "cameras&Photography": "Cameras & Photography",
-    "smartPhones&Tablets": "Smart Phones & Tablets",
-    "videoGames&Consoles": "Video Games & Consoles",
+    "laptopsAndComputers": "Laptops & Computers",
+    "camerasAndPhotography": "Cameras & Photography",
+    "smartPhonesAndTablets": "Smart Phones & Tablets",
+    "videoGamesAndConsoles": "Video Games & Consoles",
     "waterproofHeadphones": "Waterproof Headphones",
     "myAccount": "My Account",
     "discount": "Discount",
@@ -57,7 +57,7 @@
     "blog": "Blog",
     "browsetheShop": "Browse the Shop",
     "category": "Category",
-    "pre-Builtpages": "Pre-Built pages",
+    "preBuiltpages": "Pre-Built pages",
     "visualComposerElements": "Visual Composer Elements",
     "woocommercepages": "WooCommerce pages"
   }
