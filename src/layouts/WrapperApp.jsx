@@ -149,7 +149,7 @@ const WrapperApp = ({ children }) => {
               </li>
               <li>
                 <button>
-                  <span>Login</span>
+                  <span>{t("common.login")}</span>
                   <span tw="pl-1 lg:pl-2 text-xs">
                     <FontAwesomeIcon icon={["far", "user"]} />
                   </span>
@@ -157,7 +157,7 @@ const WrapperApp = ({ children }) => {
               </li>
               <li>
                 <button>
-                  <span>Wishlist</span>
+                  <span>{t("common.wishlist")}</span>
                   <span tw="pl-1 lg:pl-2 text-xs">
                     <FontAwesomeIcon icon={["far", "heart"]} />
                   </span>
@@ -239,7 +239,7 @@ const WrapperApp = ({ children }) => {
                       placeholder="Enter Email Address"
                     />
                     <div tw="absolute inset-y-0 right-0 p-1">
-                      <Button>Sign Up</Button>
+                      <Button>{t("common.signUp")}</Button>
                     </div>
                   </div>
                   <p
